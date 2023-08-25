@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Log In Page</title>
+    <meta name="description" content="Shopping Website To Sell Electronic devices">
+    <style>
+
+            button
+            {
+                width: 200px;
+                padding: 15px;
+                margin-left: 25px ;
+                background-color: floralwhite;
+                color: dodgerblue;
+                font-weight: bold;
+                font-size: 30px;
+                border-radius: 50px;
+                border-color:dodgerblue;
+                cursor: pointer;
+                transition: all .38s  ease-in-out;
+            }
+            button:hover
+            {
+                background-color: dodgerblue;
+                color: floralwhite;
+            }
+
+    </style>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+    <div class="navigation">
+
+        <ul class="ul_nav">
+            <li><a href="MobilePage.html">Mobiles</a></li>
+            <li><a href="ScreenPage.html">Screens</a></li>
+            <li><a href="TabletPage.html">Tablets</a></li>
+            <li><a href="LaptopPage.html">Laptops</a></li>
+            <li><a class="link_nav" href="HomePage.html">HomePage</a></li>
+        </ul>
+    </div>
+    <div class="heading">
+        <h1>Log In</h1>
+    </div>
+
+    <form class="myform">
+        <fieldset>
+            <legend>Your Information</legend>
+            <label>Email</label>
+            <input type="email" name="em" id="email" placeholder="Type Your Email" required>
+
+            <label>Password</label>
+            <input type="password" name="pass" id="pwd" placeholder="Type Your Password" maxlength="10" required>
+         
+            <div class="form-group">
+                <button type="button" onclick=" login()"> Sign in</button>
+                <button type="reset"  value="Reset Your Data">Reset Data</button>
+            </div>    
+
+        </fieldset>
+    </form>
+
+</body>
+
+<script>
+    function login()
+    {
+        var email=document.getElementById("email").value;
+        var pass=document.getElementById("pwd").value;   
+        var email1= localStorage.getItem("email");
+        var password1= localStorage.getItem("password");
+        var adem="admin";
+        var adpass="admin";
+        if(email==email1&& pass==password1)
+        {
+            localStorage.setItem("code","secret");
+            window.location.href="HomePage.html";
+        }
+        else if(email==adem&& pass==adpass){
+            
+            window.location.href="AdminPage.html";
+            alert("Successful process")            
+        }
+        else
+        {
+            alert("email or password is incorrect")
+        }
+    }
+</script>
+</html>

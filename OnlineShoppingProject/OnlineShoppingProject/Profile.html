@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="utf-8">
+    <title>On Line Shopping</title>
+    <meta name="description" content="This My Website">
+    
+    <link rel="stylesheet" href="Style.css">
+    <style>
+
+        button
+        {       
+            width: 200px;
+            padding: 15px;
+            margin-left: 25px;
+            background-color: floralwhite;
+            color: dodgerblue;
+            font-weight: bold;
+            font-size: 30px;
+            border-radius: 50px;
+            border-color:dodgerblue;
+            cursor: pointer;       
+            transition: all .38s  ease-in-out;
+        }
+        button:hover
+        {
+            background-color: dodgerblue;
+            color: floralwhite;
+        }
+        
+    </style>
+</head>
+
+<body>
+    <div class="navigation">
+
+        <ul class="ul_nav">
+            <li><a href="MobilePage.html">Mobiles</a></li>
+            <li><a href="ScreenPage.html">Screens</a></li>
+            <li><a href="TabletPage.html">Tablets</a></li>
+            <li><a href="LaptopPage.html">Laptops</a></li>
+            <li><a href="HomePage.html">HomePage</a></li>
+        </ul>
+    </div>
+    <div class="container">
+        <div class="heading">
+            <h1>Your profile Data</h1>
+        </div>
+        <h1>First Name: <script>document.write(localStorage.getItem("fname"))</script></h1>
+        <h1>Last Name: <script>document.write(localStorage.getItem("lname"))</script></h1>
+        <h1>Phone number: <script>document.write(localStorage.getItem("number"))</script></h1>
+        <h1>Adress: <script>document.write(localStorage.getItem("adress"))</script></h1>
+        <h1>Email: <script>document.write(localStorage.getItem("email"))</script></h1>
+        <h1>Password: <script>document.write(localStorage.getItem("password"))</script></h1>
+    <script>
+        var abc=localStorage.getItem("code");
+        if(abc!="secret")
+        {
+            window.location.href="log in.html"
+        }
+    </script>
+     
+    <button onclick="checkLogout()">Logout</button>     
+
+</body>
+<script>
+    function checkLogout()
+    {
+        var a= confirm("Are you sure you want to logout")
+        if(a==true)
+        {
+            window.location.href="log out.html"
+        }
+    }
+</script>
+</html>

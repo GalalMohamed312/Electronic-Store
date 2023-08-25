@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="utf-8">
+    <title>Admin Page</title>
+    <meta name="description" content="This My Website">
+    <link rel="stylesheet" href="Style.css">
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        body
+        {
+            font-family: "Open Sans",sans-serif;
+            font-size: 18px;
+        }
+        .container
+        {
+            margin: 20px auto;
+            width: 1200px;
+        }
+
+        .container .color-swetcher
+        {
+            list-style: none;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .container .color-swetcher li
+        {
+            width: 20px;
+            height: 20px;
+            cursor: pointer;
+            display: inline-block;
+        }
+        .container .color-swetcher li:first-child{
+            background-color:rgb(109, 61, 61);
+        }
+        .container .color-swetcher li:nth-child(2){
+            background-color: rgb(66, 105, 66);
+        }
+        .container .color-swetcher li:nth-child(3){
+            background-color:rgb(132, 204, 245); 
+        }
+        .container .color-swetcher li:nth-child(4){
+            background-color: rgb(65, 58, 35);
+        }
+     
+        .green .container div{
+            background-color: rgb(66, 105, 66);
+            padding: 20px;
+            color: white;
+        }
+        
+        .black .container div{
+            background-color: rgb(132, 204, 245);
+            padding: 20px;
+            color: white;
+        }
+         
+        .blue .container div{
+            background-color: rgb(65, 58, 35);;
+            padding: 20px;
+            color: white;
+        }
+        
+        .red .container div{
+            background-color: rgb(109, 61, 61);;
+            padding: 20px;
+            color: white;
+        } 
+        .container div{
+            background-color: azure;
+        }
+        
+
+    </style>
+</head>
+
+<body>
+    <div class="navigation">
+
+        <ul class="ul_nav">
+            <li><a href="MobilePage.html">Mobiles</a></li>
+            <li><a href="ScreenPage.html">Screens</a></li>
+            <li><a href="Tablets.html">Tablets</a></li>
+            <li><a href="LaptopPage.html">Laptops</a></li>
+            <li><a href="HomePage.html">HomePage</a></li>
+            <li><a href="profile.html">Profile</a></li>
+        </ul>
+
+    </div>
+    <div class="container">
+        <div class="heading">
+            
+                <ul class="color-swetcher">
+                    <li data-color="red"></li>
+                    <li data-color="green"></li>
+                    <li data-color="black"></li>
+                    <li data-color="blue"></li>
+                </ul>           
+            
+            <h1>choose background to be changed in Electronic store pages</h1>
+        </div>
+       
+        <script src="admin.js"></script> 
+
+    </div>
+
+</body>
+
+
+</html>

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Register Page</title>
+    <meta name="description" content="Shopping Website To Sell Electronic devices">
+    <style>
+
+            button
+            {
+                width: 200px;
+                padding: 15px;
+                margin-left: 25px ;
+                background-color: floralwhite;
+                color: dodgerblue;
+                font-weight: bold;
+                font-size: 30px;
+                border-radius: 50px;
+                border-color:dodgerblue;
+                cursor: pointer;
+                transition: all .38s  ease-in-out;
+            }
+            button:hover
+            {
+                background-color: dodgerblue;
+                color: floralwhite;
+            }
+            h5 a{
+                text-decoration: none;
+                color: chocolate;
+            }
+
+    </style>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+    <div class="navigation">
+
+        <ul class="ul_nav">
+            <li><a href="MobilePage.html">Mobiles</a></li>
+            <li><a href="ScreenPage.html">Screens</a></li>
+            <li><a href="TabletPage.html">Tablets</a></li>
+            <li><a href="LaptopPage.html">Laptops</a></li>
+            <li><a class="link_nav" href="HomePage.html">HomePage</a></li>
+        </ul>
+    </div>
+    <div class="heading">
+        <h1>Register</h1>
+    </div>
+
+    <form class="myform">
+        <fieldset>
+            <legend>Your Information</legend>
+            <label>First Name</label>
+            <input type="text" name="fname" id="fname" placeholder="Type Your First Name" required autofocus min="5" max="20">
+
+            <label>Last Name</label>
+            <input type="text" name="Lname" id="lname" placeholder="Type Last Name" required>
+
+            <label>Password</label>
+            <input type="password" name="pass" id="pwd" placeholder="Type Your Password" maxlength="10" required>
+
+            <label>Phone Number</label>
+            <input type="number" name="num" id="number" placeholder="Type Your Phone Number">
+
+            <label>Address</label>
+            <input type="text" name="address" id="adress" placeholder="Type Your Address" required>
+
+            <label>Email</label>
+            <input type="email" name="em" id="email" placeholder="Type Your Email" required>
+
+            <div class="form-group">
+                <button type="button" onclick="signup()">Sign Up</button>
+                <button type="reset"  value="Reset Your Data">Reset Data</button>
+            </div>    
+                <h5>Have an account? <a href="log in.html"> Sign in </a></h5>
+
+        </fieldset>
+    </form>
+
+</body>
+
+<script>
+    function signup()
+    {
+        var fname1=document.getElementById("fname").value;
+        var lname1=document.getElementById("lname").value;
+        var email1=document.getElementById("email").value;
+        var password1=document.getElementById("pwd").value;
+        var number1=document.getElementById("number").value;
+        var adress1=document.getElementById("adress").value;
+
+        if(!(fname1=="" || lname1=="" || email1=="" || password1=="" ||number1==""||adress1==""))
+        {
+            
+            if(email1.indexOf("@") == -1 || email1.indexOf(".") == -1)
+            {
+                alert("Please Enter valid email, exmaple-> info@yahoo.com")
+            }
+            else if(email1==localStorage.getItem("email"))
+            {
+                alert("This user already exist \n Please enter another email")
+            }
+            else
+            {
+                window.location.href="HomePage.html"
+                localStorage.setItem("code","secret")
+            }
+                        
+        }
+        else
+        {
+            alert('please enter full data')
+        }
+        
+        localStorage.setItem("fname",fname1)
+        localStorage.setItem("lname",lname1)
+        localStorage.setItem("email",email1)
+        localStorage.setItem("password",password1)
+        localStorage.setItem("number",number1)
+        localStorage.setItem("adress",adress1)
+        
+    }
+    
+</script>
+</html>
